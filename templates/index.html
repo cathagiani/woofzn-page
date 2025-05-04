@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOOFZN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>    
+    <style>
+        .section:not(.active) {
+            visibility: hidden;
+        }
+        .section.active {
+            visibility: visible;
+        }
+    </style>
+      
+    <div id="navbar">
+        <button onclick="showSection('about')">About Me</button>
+        <button onclick="showSection('terms')">Terms of Service</button>
+        <button onclick="showSection('commissions')">Commissions</button>
+    </div>
+      
+    <div id="about" class="section">
+        <h2>About Me</h2>
+
+        <div class="about-content">
+            <!-- pagedoll -->
+            <img class="pagedoll" src="{{ url_for('static', filename='img/woofshot1.png') }}" alt="Woofshot">
+    
+            <!-- Caja con fondo para el texto -->
+            <div class="text-box">
+                <p>haiii ! :3 my name is catha but feel free to call me zero. im a 19 year old computer engineer student from Argentina who does art as a hobby. i go by any pronouns but i mainly prefer she/they. </p> 
+                <p>im always open to make new friends who share my passion for coding or any other engineering related stuff! :3</p>
+                <p>Im also a fortnite freak and a lego batman enjoyer. ive played every single lego game ever tho but im a big gotham fan so..</p>
+                <p>i am always open for new friendships! you may find my socials/contact info and commission info up next ! <3</p>
+    
+                <p>☆☆☆</p>
+    
+                <p>JOIN THE WOOFZN DISCORD SERVER <a href="https://discord.gg/dEcPE8fTmt" class="button-link">HERE</a></p>
+    
+                <p>☆☆☆</p>
+    
+                <!-- Botones de redes sociales -->
+                <div class="social-buttons">
+                    <a href="https://toyhou.se/woofzn" class="social-button">Toyhouse</a>
+                    <a href="https://x.com/woofznn" class="social-button">Twitter</a>
+                    <a href="https://www.instagram.com/woofzn/" class="social-button">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    
+    <div id="terms" class="section">
+        <h2>Terms of Service</h2>
+    
+        <div class="terms-content">
+            <!-- Caja con fondo para el texto -->
+            <div class="text-box">
+                <p>♡ you may not use my art for commercial purposes unless discussed beforehand</p>
+                <p>♡ you may not use my art for AI training or any other AI related stuff</p>
+                <p>♡ you may not use my art for NFTs</p>
+                <p>♡ you may not claim my art as your own</p>
+                <p>♡ you may not trace my art</p>
+                <p>♡ you may not use my art for hate speech or any other hateful content</p>
+                <p>♡ Refunds may only be issued if two months have passed since you ordered your commission. Otherwise I do not issue refunds.</p>
+                <p>♡ you may change my designs to fit your liking once you own the character</p>
+                <p>♡ the value of the character does not go back to 0 once traded/gifted. (ex: if originally bought for $20 and gifted away, it is still worth $20.)</p>
+                <p>♡ you may ask for progress/wips anytime</p>
+                <p>♡ i will completely redo a custom once only. the leftover design will be sold away.</p>
+                <p>♡ i usually take from a week to a month for commissions, mostly from march to november due to college.</p>
+                <p>♡ i have the right to refund/deny your commission for any reason.</p>
+                <p>♡ i have the right to post your commission on my social media unless you ask me not to.</p>
+                <p>♡ i have the right to use your commission as an example for my portfolio unless you ask me not to.</p>
+            </div>
+            <!-- pagedoll -->
+            <div class="pagedoll-container">
+                <img class="pagedoll" src="{{ url_for('static', filename='img/pagedoll.png') }}" alt="chibi">
+                <p>art by meowsio :3</p>
+            </div>
+        </div>
+        <h3>I do not have a blacklist :D</h3>
+    </div>
+
+    <div id="commissions" class="section">
+        <h2>Commission info !</h2>
+        <div class="commissions-content">
+            <p>Here you may find my commission prices and my commission status !!</p>
+            <p>My commissions are currently:</p>
+            <div class="status-box">
+                <span class="status-text">OPEN</span>
+            </div>            
+            <p>to find [MOST] of my available YCHS ; <a href="https://woofznychs.carrd.co/" class="button-link">tap HERE</a></p>
+            <p>I have a ton of other YCHs but i have yet to update that :) they may be found on my instagram though !</p>
+        </div>
+        <!-- Cuadro comparativo -->
+        <div class="comparative-box">
+            <div class="grid-container">
+                <div class="grid-item draw">WILL DRAW</div>
+                <div class="grid-item wont-draw">WON'T DRAW</div>
+                <div class="grid-item will-draw-info">
+                    <p>- Any species (anthro or feral)</p>
+                    <p>- Complex characters</p>
+                    <p>- Suggestive pieces (ANTHRO ONLY)</p>
+                    <p>- Fan content (selfshipping, self-inserts, etc.)</p>
+                    <p>- Mild gore</p>
+                </div>
+                <div class="grid-item wont-draw-info">
+                    <p>- Hate art</p>
+                    <p>- NSFW</p>
+                    <p>- Heavy gore / extreme violence </p>
+                    <p>- Political themes</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Commission Options</h2>
+        <div class="commissions-grid">
+          <div class="commission-card">
+            <h3>Full Body</h3>
+            <p>Price: $40</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/full1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/full7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+            </div>
+          </div>
+      
+          <div class="commission-card">
+            <h3>Half Body</h3>
+            <p>Price: $30</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/half1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/half7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+            </div>
+          </div>
+
+          <div class="commission-card">
+            <h3>Bust</h3>
+            <p>Price: $25</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/bust1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/bust7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+            </div>
+          </div>
+
+          <div class="commission-card">
+            <h3>Headshot</h3>
+            <p>Price: $20</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/head1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/head2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/head3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/head4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/head5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/head6.png') }}" alt="Example 6" onclick="openLightbox(this.src)"> 
+                <img src="{{ url_for('static', filename='img/head7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">            
+            </div>
+          </div>
+
+          <div class="commission-card">
+            <h3>Chibi</h3>
+            <p>Price: $25</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/chibi1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/chibi2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/chibi3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/chibi4.jpg') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/chibi5.jpg') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/chibi6.png') }}" alt="Example 6" onclick="openLightbox(this.src)"> 
+                <img src="{{ url_for('static', filename='img/chibi7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+            </div>
+          </div>
+        
+          <div class="commission-card">
+            <h3>Customs</h3>
+            <p>Price: ranges from $25-$45 depending on complexity</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/custom1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/custom7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">  
+            </div>
+          </div>
+
+          <div class="commission-card">
+            <h3>Sketches</h3>
+            <p>Price: ranges from $20-40 depending on amount of characters and type</p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/sketch1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch2.png') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch3.png') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/sketch7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+            </div>
+          </div>
+
+          <div class="commission-card">
+            <h3>Character Reference Sheets</h3>
+            <p>Starting Price: $70 -- May go up depending on complexity and stuff added </p>
+            <div class="examples">
+                <img src="{{ url_for('static', filename='img/ref1.png') }}" alt="Example 1" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref2.jpg') }}" alt="Example 2" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref3.jpg') }}" alt="Example 3" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref4.png') }}" alt="Example 4" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref5.png') }}" alt="Example 5" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref6.png') }}" alt="Example 6" onclick="openLightbox(this.src)">
+                <img src="{{ url_for('static', filename='img/ref7.png') }}" alt="Example 7" onclick="openLightbox(this.src)">
+              </div>
+          </div>
+
+
+        </div>
+    
+    </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- Modal para mostrar imagen grande -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+
+</body>
+</html>
